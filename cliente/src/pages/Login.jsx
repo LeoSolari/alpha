@@ -4,7 +4,6 @@ import { Link } from "react-router-dom";
 import Logo from "../assets/logoalpha2.png";
 import { faEye, faEyeSlash } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { auth } from "../utils/PrivateRoute";
 
 const Login = () => {
   const [contraseña, setContraseña] = useState("");
@@ -17,6 +16,8 @@ const Login = () => {
     e.preventDefault();
     if (contraseña === "librerianecochea" && nombre === "alfa") {
       return navigate("/admin");
+    } else {
+      return navigate("/login");
     }
   };
 

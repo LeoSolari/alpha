@@ -14,7 +14,6 @@ import { legacy_createStore as createStore } from "redux";
 import { Provider } from "react-redux";
 import { applyMiddleware, compose } from "redux";
 import thunk from "redux-thunk";
-import PrivateRoute from "./utils/PrivateRoute";
 
 const store = createStore(reducers, compose(applyMiddleware(thunk)));
 
@@ -29,9 +28,7 @@ root.render(
         <Route path="*" element={<Error />} />
         <Route path="/Login" element={<Login />} />
 
-        <Route element={<PrivateRoute />}>
-          <Route path="/admin" element={<AdminPage />} />
-        </Route>
+        <Route path="/admin" element={<AdminPage />} />
       </Routes>
     </BrowserRouter>
   </Provider>
